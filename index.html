@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Product Listing</title>
+      <link rel="stylesheet" href="css/styles.css">
+   </head>
+   <body>
+      <header class="header">
+         <div class="header__container">
+            <div class="header__hamburger" id="hamburger" onclick="toggleFilterCategories()">
+               <span class="header__hamburger-line"></span>
+               <span class="header__hamburger-line"></span>
+               <span class="header__hamburger-line"></span>
+            </div>
+            <a href="#" class="header__logo">
+            <img src="images/Venia.png" alt="Website Logo" class="header__logo-img">
+            </a>
+            <nav class="header__nav">
+               <ul class="header__menu">
+                  <li class="header__menu-item"><a href="#" class="header__menu-link">Home</a></li>
+                  <li class="header__menu-item"><a href="#" class="header__menu-link">Women</a></li>
+                  <li class="header__menu-item"><a href="#" class="header__menu-link">Men</a></li>
+                  <li class="header__menu-item"><a href="#" class="header__menu-link">Smart Gear</a></li>
+                  <li class="header__menu-item"><a href="#" class="header__menu-link">Accessories</a></li>
+               </ul>
+            </nav>
+            <div class="header__cart">
+               <img src="images/bag.png" alt="Cart" class="header__cart-icon">
+            </div>
+         </div>
+      </header>
+      <div class="banner">
+         <div class="banner__content">
+            <h2 class="banner__title">Men's Outerwear</h2>
+            <div class="banner__underline"></div>
+         </div>
+         <div class="banner__image-container">
+            <img class="banner__image" src="images/banner.JPG" alt="Men's Outerwear" />
+         </div>
+      </div>
+      <div class="product-container">
+         <div class="product-container__filter filter">
+            <div class="filter__breadcrumb">
+               <span class="filter__breadcrumb-text">clothing / womens / outerwear</span>
+            </div>
+            <ul class="filter__categories">
+               <h2 class="filter__title">Filters</h2>
+               <hr>
+               <h4 class="filter__title">Categories</h4>
+               <li class="filter__category"><input type="checkbox" class="filter__category-checkbox" value="jewelery"> Jewellery</li>
+               <li class="filter__category"><input type="checkbox" class="filter__category-checkbox" value="electronics"> Electronics</li>
+               <li class="filter__category"><input type="checkbox" class="filter__category-checkbox" value="men's clothing"> Men's Clothing</li>
+               <li class="filter__category"><input type="checkbox" class="filter__category-checkbox" value="women's clothing"> Women's Clothing</li>
+            </ul>
+            <hr>
+            <div class="filter__search-container">
+               <input type="text" id="search" placeholder="Search products..." class="filter__search-input">
+            </div>
+            <div class="mobile-filters">
+               <div class="mobile-filters__filter mobile-filters__filter--filter">
+                  <img
+                     class="mobile-filters__icon"
+                     src="images/filter.png" alt="Filter Products" width="20" height="20"
+                     />
+                  <p class="mobile-filters__text">Filter Products</p>
+               </div>
+               <div class="mobile-filters__filter mobile-filters__filter--sort" id="sort" onclick="toggleSortByPrice()">
+                  <img
+                     class="mobile-filters__icon" 
+                     src="images/sort.png" alt="Sort Products" width="20" height="20"
+                     />
+                  <p class="mobile-filters__text">Sort Products</p>
+               </div>
+            </div>
+         </div>
+         <div class="product-container__list-container">
+            <div class="product-info">
+               <span class="product-info__total-products"><strong id="totalProductsCount">0</strong> Results </span>
+               <select id="sortOptions" class="filter__sort-options">
+                  <option value="default">Sort by Price</option>
+                  <option value="priceLowToHigh">Price: Low to High</option>
+                  <option value="priceHighToLow">Price: High to Low</option>
+               </select>
+            </div>
+            <div class="shimmer" id="shimmerEffect" style="display: none;"></div>
+            <div class="product-container__list product-list" id="productList">
+               <div id="errorMessage" style="color: red; display: none;"></div>
+            </div>
+            <div id="noProductsMessage" style="color: red; display: none;"></div>
+            <button id="loadMoreButton" class="button button--load-more">More Products</button>
+         </div>
+      </div>
+      <footer class="footer">
+         <div class="footer__links">
+            <div class="footer__link-section">
+               <p class="footer__link-heading">Account</p>
+               <p class="footer__link">Sign In</p>
+               <p class="footer__link">Register</p>
+               <p class="footer__link">Order Status</p>
+            </div>
+            <div class="footer__link-section">
+               <p class="footer__link-heading">About Us</p>
+               <p class="footer__link">Our Story</p>
+               <p class="footer__link">Careers</p>
+            </div>
+            <div class="footer__link-section">
+               <p class="footer__link-heading">Help</p>
+               <p class="footer__link">Contact Us</p>
+               <p class="footer__link">Order Status</p>
+               <p class="footer__link">Returns</p>
+            </div>
+            <div class="footer__link-section">
+               <p class="footer__link-heading">Follow Us!</p>
+               <p class="footer__link-description">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                  eiusmod tempor incididunt ut labore et dolore.
+               </p>
+               <div class="footer__socials">
+                  <img class="footer__social-icon" src="images/instagram.png" alt="Instagram" />
+                  <img class="footer__social-icon" src="images/facebook.png" alt="Facebook" />
+                  <img class="footer__social-icon" src="images/twitter.png" alt="Twitter" />
+               </div>
+            </div>
+         </div>
+         <div class="footer__copyright">
+            <img class="footer__logo" src="images/VeniaFooterLogo.png" alt="Venia Footer" />
+            <p class="footer__copyright-text">&copy; Company Name Address Ave, City Name, State ZIP</p>
+            <div class="footer__terms">
+               <p class="footer__term">Terms of Use</p>
+               <p class="footer__term">Privacy Policy</p>
+            </div>
+         </div>
+      </footer>
+      <script src="js/script.js"></script>
+   </body>
+</html>
